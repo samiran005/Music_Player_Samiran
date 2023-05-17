@@ -216,7 +216,7 @@ body {
     }
 
     .list-btn {
-        scale: 1.5;
+        scale: 1.2;
         padding-top: 3px;
     }
 
@@ -239,5 +239,9 @@ body {
 
     .middle {
         scale: 1.5;
+        height: 62%;
+    }
+    .bottom {
+        height: 25%;
     }
 }

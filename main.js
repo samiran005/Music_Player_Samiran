@@ -63,13 +63,15 @@ function findingDuration(){
     return `${stringMin}:${stringSec}`;
  }
 
-setTimeout(()=>{
-    findingDuration();
-    totalTime.innerText = timeConvert(songDuration);
-}, 500)
+// setTimeout(()=>{
+    // findingDuration();
+    // totalTime.innerText = timeConvert(songDuration);
+// }, 1000)
 
 // currentTime
 setInterval(()=>{
+    findingDuration();
+    totalTime.innerText = timeConvert(songDuration);
     progress.value = audio.currentTime/fraction;
     current.innerText = timeConvert(audio.currentTime);
 }, 1000)
