@@ -1,0 +1,11 @@
+for audio we will use Audio element that is provided by the HTML.
+example : 
+    <audio controls>
+        <source src="./music_libary/Hardly In Love.mp3">
+    </audio>
+
+we have some atribute with audio element in HMTL to add functionalty.
+1. autopaly
+2. loop
+3. muted
+4. preload="auto" / preload="none"

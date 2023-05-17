@@ -1,0 +1,243 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    width: 300px;
+    aspect-ratio: 1/1.5;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#logo {
+    font-size: 20px;
+    color: white;
+}
+
+#list {
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.list-btn {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+}
+
+.middle {
+    width: 100%;
+    height: 57%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.img {
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    /* border: 1px solid tomato; */
+
+    background-image: url(./Images/image1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid white;
+}
+
+#ong-title {
+    font-weight: 100;
+}
+
+.bottom {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.control {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+
+    gap: 15px;
+}
+
+#loop {
+    align-self: flex-end;
+    padding: 0px 20px 0 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* ************************************* */
+/* ************************************* */
+/* for design progress bar */
+
+
+#progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background-color: rgb(201, 201, 201);
+    border-radius: 4px;
+    cursor: pointer;
+
+    overflow: hidden;
+     
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 15px;
+    background-color: #90ee90;
+    box-shadow: -400px 0 0 400px #90ee90;
+}
+
+.time {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.timeControl {
+    font-size: 10px;
+}
+
+/* ************************************* */
+/* ************************************* */
+
+
+.play-pause-change {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px;
+    padding-bottom: 10px;
+    align-items: center ;
+}
+
+#play {
+    font-size: 30px;
+    color: black;
+}
+
+.btn-holder {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5px 0px 0px 1.5px;
+
+    position: relative;
+
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+}
+
+.change-song {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* ******************************************* */
+/* ******************************************* */
+
+#audio {
+    display: none;
+}
+
+
+/* ****************************************** */
+/* for javascript */
+.green--color {
+    color: #90ee90;
+}
+
+
+
+/* ************************************ */
+/* mobile responsive */
+@media (max-width: 768px){
+    .container {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    #logo {
+        font-size: 30px;
+    }
+
+    .list-btn {
+        scale: 1.5;
+        padding-top: 3px;
+    }
+
+    .change-song {
+        font-size: 50px;
+    }
+
+    #play-btn {
+        scale: 1.5;
+        padding: 3px 0 0 2px;
+    }
+
+    .timeControl {
+        font-size: 16px;
+    }
+
+    #loop {
+        scale: 1.5;
+    }
+
+    .middle {
+        scale: 1.5;
+    }
+}
