@@ -8,5 +8,10 @@ const musicData = [
         musicTitle: 'Control Zoe Wees',
         musicUrl: './music_libary/Control-Zoe-Wees.mp3',
         musicImageUrl: './Images/image2.jpg'
-    }
+    },
+    {
+        musicTitle: 'Paralyzed',
+        musicUrl: './music_libary/Paralyzed.mp3',
+        musicImageUrl: './Images/image3.jpg'
+    },
 ]
