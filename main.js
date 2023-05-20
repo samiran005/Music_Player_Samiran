@@ -169,10 +169,18 @@ function findingDuration(){
         stringSec = `0${sec}`;
     }
 
+    // *********** for hendaling NaN in time ***********
+    if(!min){
+        stringMin = '00'
+    }
+    if(!sec){
+        stringSec = '00'
+    }
+
     return `${stringMin}:${stringSec}`;
  }
 
-// currentTime
+
 setInterval(()=>{
 
     findingDuration();
