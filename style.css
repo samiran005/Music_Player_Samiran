@@ -119,6 +119,12 @@ body {
     cursor: pointer;
 }
 
+#replay {
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
 
 /* ************************************* */
 /* ************************************* */
@@ -324,10 +330,7 @@ body {
     .timeControl {
         font-size: 16px;
     }
-
-    #loop {
-        scale: 1.5;
-    }
+    
 
     .middle {
         height: 62%;
@@ -355,7 +358,7 @@ body {
         font-size: 29px;
     }
     #loop {
-        font-size: 18px;
+        font-size: 23px;
     }
 
 

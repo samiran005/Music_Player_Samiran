@@ -16,6 +16,8 @@ const play = document.getElementById('play');
 
 const loop = document.getElementById('loop');
 const mute = document.getElementById('mute');
+const replay = document.getElementById('replay');
+
 
 const progress = document.getElementById('progress');
 const totalTime = document.getElementById('totalTime');
@@ -37,7 +39,25 @@ const listWindow = document.querySelector('.listWindow');
 
 const songListHolder = document.querySelector('.song-list');
 
+
 // *********************************************************
+// all variables
+let songNo = 0;
+
+// *********************************************************
+// for importent object to add features
+const replayList = {
+    status: false,
+}
+
+// function to handel replay
+function repalyHandel(){
+        songNo = 0;
+        selectSong(songNo);
+        audio.play();
+}
+
+
 // *********************************************************
 // for selecting song from musicData
 
@@ -46,8 +66,6 @@ function selectSong(i){
     songImage.style.backgroundImage = `url(${musicData[i].musicImageUrl})`;
     audio.src = `${musicData[i].musicUrl}`;
 }
-
-let songNo = 0;
 
 //default songNo
 selectSong(songNo);
@@ -104,6 +122,15 @@ loop.addEventListener('click', ()=>{
     }
 })
 
+replay.addEventListener('click', ()=>{
+    replay.classList.toggle('green--color');
+    if(replay.classList.contains('green--color')){
+        replayList.status = true;
+    }else{
+        replayList.status = false;
+    }
+})
+
 
 mute.addEventListener('click', ()=>{
     mute.classList.toggle('bi-volume-mute-fill')
@@ -113,7 +140,6 @@ mute.addEventListener('click', ()=>{
         audio.muted = true;
     }else if(mute.classList.contains('bi-volume-up-fill')){
         audio.muted = false;
-        console.dir(audio)
     }
 })
 
@@ -157,11 +183,21 @@ setInterval(()=>{
     //for adding loop function with multiple music
     if(!audio.loop){
         if(progress.value == 100){
+            //for handeling replay
+            if(songNo == musicData.length - 1){
+                if(replayList.status){
+                    repalyHandel();
+                    return;
+                }
+            }
+
+            //for handeling next song
             if(songNo >= musicData.length - 1) return;
             songNo ++;
             selectSong(songNo);
             audio.play();
         }
+
     }
     
 
@@ -176,20 +212,12 @@ setInterval(()=>{
     }
 
 
-    // if(Math.floor(audio.currentTime) > Math.floor(audio.duration) - 2){
-    //     console.log(Math.floor(audio.currentTime));
-    //     console.log(Math.floor(audio.duration))
-    //     // console.log('work')
-    //     play.classList.remove('bi-pause');
-    //     play.classList.add('bi-play');
-    // }
+    if(Math.floor(audio.currentTime) > Math.floor(audio.duration) - 2){
 
-    if(totalTime.innerText === current.innerText){
-        console.log('stop')
-        // play.classList.remove('bi-pause');
-        // play.classList.add('bi-play');
-    }
-    
+        play.classList.remove('bi-pause');
+        play.classList.add('bi-play');
+    }  
+
 
 }, 1000)
 
@@ -211,8 +239,7 @@ listBtnClose.addEventListener('click', ()=>{
 })
 
 function playTheSong(ele){
-    let songNo = + ele.currentTarget.dataset.no
-    console.log(songNo)
+    songNo = + ele.currentTarget.dataset.no
 
     selectSong(songNo);
     audio.play();
@@ -258,3 +285,6 @@ musicData.forEach((ele, index)=>{
 
     songListHolder.appendChild(songDiv);
 })
+
+// *********************************************************
+// *********************************************************
