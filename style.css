@@ -358,8 +358,11 @@ body {
         font-size: 29px;
     }
     #loop {
-        font-size: 23px;
+        font-size: 25px;
     }
+    #replay {
+        font-size: 24px;
+    } 
 
 
     #song-title {
