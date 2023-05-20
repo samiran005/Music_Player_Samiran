@@ -30,6 +30,13 @@ const next = document.getElementById('next');
 const prev = document.getElementById('prev');
 
 
+// for list window
+const listBtn = document.querySelector('.list-btn');
+const listBtnClose = document.querySelector('#x');
+const listWindow = document.querySelector('.listWindow');
+
+const songListHolder = document.querySelector('.song-list');
+
 // *********************************************************
 // *********************************************************
 // for selecting song from musicData
@@ -193,3 +200,61 @@ progress.addEventListener('change',()=>{
 
 // *********************************************************
 // *********************************************************
+
+// for window of list of songs
+listBtn.addEventListener('click', ()=>{
+    listWindow.classList.remove('display--none');
+})
+
+listBtnClose.addEventListener('click', ()=>{
+    listWindow.classList.add('display--none');
+})
+
+function playTheSong(ele){
+    let songNo = + ele.currentTarget.dataset.no
+    console.log(songNo)
+
+    selectSong(songNo);
+    audio.play();
+    listWindow.classList.add('display--none');
+}
+
+// songListHolder
+musicData.forEach((ele, index)=>{
+    const songDiv = document.createElement('div'); //creating element for songdata to hold
+    songDiv.classList.add('song');
+
+    songDiv.setAttribute('data-no', `${index}`); //for adding data of index
+
+    // ************** for image in list
+    const imgHolder = document.createElement('div');
+    imgHolder.classList.add('list-img-holder');
+
+    const img = document.createElement('img');
+    img.src = ele.musicImageUrl;
+    img.classList.add('list-img');
+
+    imgHolder.appendChild(img);
+    // **************
+
+    // ************** for song info in list
+    const infoHolder = document.createElement('div');
+
+    const titleH3 = document.createElement('h3');
+    titleH3.id = 'song-title';
+    titleH3.innerText = ele.musicTitle;
+
+    const para = document.createElement('p');
+    para.innerText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, eum.';
+
+    infoHolder.appendChild(titleH3);
+    infoHolder.appendChild(para);
+    // **************
+
+    songDiv.appendChild(imgHolder);
+    songDiv.appendChild(infoHolder);
+
+    songDiv.addEventListener('click', playTheSong);
+
+    songListHolder.appendChild(songDiv);
+})
