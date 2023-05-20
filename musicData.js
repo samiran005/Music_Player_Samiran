@@ -1,27 +1,32 @@
 const musicData = [
     {
-        musicTitle: 'Hardly In Love',
-        musicUrl: './music_libary/Hardly-In-Love.mp3',
-        musicImageUrl: './Images/image1.jpg'
+        songTitle: 'Hardly In Love',
+        songUrl: './music_libary/Hardly-In-Love.mp3',
+        songImageUrl: './Images/image1.jpg',
+        songAuthor: 'Sam Tinnesz'
     },
     {
-        musicTitle: 'Control Zoe Wees',
-        musicUrl: './music_libary/Control-Zoe-Wees.mp3',
-        musicImageUrl: './Images/image2.jpg'
+        songTitle: 'Control Zoe Wees',
+        songUrl: './music_libary/Control-Zoe-Wees.mp3',
+        songImageUrl: './Images/image2.jpg',
+        songAuthor: "Daddy's Eyes"
     },
     {
-        musicTitle: 'Crying In My Bedroom',
-        musicUrl: './music_libary/Crying-In-My-Bedroom.mp3',
-        musicImageUrl: './Images/image3.jpg'
+        songTitle: 'Crying In My Bedroom',
+        songUrl: './music_libary/Crying-In-My-Bedroom.mp3',
+        songImageUrl: './Images/image3.jpg',
+        songAuthor: 'Chloe Adams'
     },
     {
-        musicTitle: 'Dont Watch Me Cry',
-        musicUrl: './music_libary/Dont-Watch-Me-Cry.mp3',
-        musicImageUrl: './Images/image4.jpg'
+        songTitle: 'Dont Watch Me Cry',
+        songUrl: './music_libary/Dont-Watch-Me-Cry.mp3',
+        songImageUrl: './Images/image4.jpg',
+        songAuthor: 'Jorja Smith'
     },
     {
-        musicTitle: 'Unity Alan Walker',
-        musicUrl: './music_libary/Unity-Alan-Walker.mp3',
-        musicImageUrl: './Images/image5.jpg'
+        songTitle: 'Unity',
+        songUrl: './music_libary/Unity-Alan-Walker.mp3',
+        songImageUrl: './Images/image5.jpg',
+        songAuthor: 'Alan Walker'
     },
 ]

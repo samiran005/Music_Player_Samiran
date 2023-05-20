@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalam&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -7,7 +9,7 @@
 
 body {
     background-color: black;
-    font-family: sans-serif;
+    font-family: 'Kalam', cursive;
     color: rgb(255, 255, 255);
 }
 
@@ -41,6 +43,7 @@ body {
     font-size: 20px;
     cursor: pointer;
     color: black;
+    margin: 4px 0 0 1px;
 }
 
 .list-btn {
@@ -80,8 +83,18 @@ body {
     border: 5px solid white;
 }
 
+.songInfo {
+    text-align: center;
+}
+
+#songAuthor {
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Great Vibes', cursive;
+}
+
 #song-title {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .bottom {
@@ -178,6 +191,7 @@ body {
     padding: 0 50px;
     padding-bottom: 10px;
     align-items: center ;
+    margin-top: 15px;
 }
 
 #play {
@@ -193,7 +207,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5px 0px 0px 1.5px;
+    padding: 7.5px 0px 0px 0.5px;
 
     position: relative;
 
@@ -256,7 +270,7 @@ body {
 }
 
 .list-img-holder {
-    width: 130px;
+    width: 60px;
     height: 60px;
 }
 
@@ -264,6 +278,11 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+
+.song p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
 }
 
 .song-list {
@@ -312,7 +331,10 @@ body {
 
     .list-btn {
         scale: 1.2;
-        padding-top: 3px;
+    }
+
+    #list {
+        margin: 4px 0 0 0;
     }
 
     .play-pause-change {
@@ -327,22 +349,22 @@ body {
         padding: 3px 0 0 2px;
     }
 
+    #play {
+        margin: 5px 0 0 -1px;
+    }
+
     .timeControl {
         font-size: 16px;
     }
     
 
     .middle {
-        height: 62%;
+        height: 60%;
     }
 
     .img {
         width: 260px;
         height: 260px;
-    }
-
-    #song-title {
-        font-size: 30px;
     }
 
     
@@ -366,6 +388,13 @@ body {
 
 
     #song-title {
-        font-size: 20px;
+        font-size: 30px;
+    }
+    #songAuthor {
+        font-size: 22px;
+    }
+
+    #song-title-list {
+        font-size: 23px;
     }
 }

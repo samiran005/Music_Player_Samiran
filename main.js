@@ -26,6 +26,7 @@ const current = document.getElementById('current');
 
 const songTitle = document.getElementById('song-title');
 const songImage = document.querySelector('.img');
+const songAuthor = document.getElementById('songAuthor');
 
 
 const next = document.getElementById('next');
@@ -62,9 +63,10 @@ function repalyHandel(){
 // for selecting song from musicData
 
 function selectSong(i){
-    songTitle.innerText = musicData[i].musicTitle;
-    songImage.style.backgroundImage = `url(${musicData[i].musicImageUrl})`;
-    audio.src = `${musicData[i].musicUrl}`;
+    songTitle.innerText = musicData[i].songTitle;
+    songAuthor.innerText = musicData[i].songAuthor;
+    songImage.style.backgroundImage = `url(${musicData[i].songImageUrl})`;
+    audio.src = `${musicData[i].songUrl}`;
 }
 
 //default songNo
@@ -258,7 +260,7 @@ musicData.forEach((ele, index)=>{
     imgHolder.classList.add('list-img-holder');
 
     const img = document.createElement('img');
-    img.src = ele.musicImageUrl;
+    img.src = ele.songImageUrl;
     img.classList.add('list-img');
 
     imgHolder.appendChild(img);
@@ -268,11 +270,11 @@ musicData.forEach((ele, index)=>{
     const infoHolder = document.createElement('div');
 
     const titleH3 = document.createElement('h3');
-    titleH3.id = 'song-title';
-    titleH3.innerText = ele.musicTitle;
+    titleH3.id = 'song-title-list';
+    titleH3.innerText = ele.songTitle;
 
     const para = document.createElement('p');
-    para.innerText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, eum.';
+    para.innerText = ele.songAuthor;
 
     infoHolder.appendChild(titleH3);
     infoHolder.appendChild(para);
