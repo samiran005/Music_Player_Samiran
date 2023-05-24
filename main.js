@@ -79,9 +79,10 @@ next.addEventListener('click', ()=>{
     selectSong(songNo);
     audio.play();
 
-    if(play.classList.contains('bi-pause')){
-        play.classList.add('bi-play');
-        play.classList.remove('bi-pause');
+    if(play.classList.contains('fa-pause')){
+        play.classList.add('fa-play');
+        // play.classList.remove('bi-pause');
+        play.classList.remove('fa-pause');
     }
 })
 
@@ -92,9 +93,9 @@ prev.addEventListener('click', ()=>{
     selectSong(songNo);
     audio.play();
 
-    if(play.classList.contains('bi-pause')){
-        play.classList.add('bi-play');
-        play.classList.remove('bi-pause');
+    if(play.classList.contains('fa-pause')){
+        play.classList.add('fa-play');
+        play.classList.remove('fa-pause');
     }
 })
 
@@ -102,14 +103,14 @@ prev.addEventListener('click', ()=>{
 // *********************************************************
 // for adding play and pause function
 playPauseBtn.addEventListener('click', ()=>{
-    if(play.classList.contains('bi-play')){
+    if(play.classList.contains('fa-play')){
         audio.play();
-    }else if(play.classList.contains('bi-pause')){
+    }else if(play.classList.contains('fa-pause')){
         audio.pause();
     }
 
-    play.classList.toggle('bi-play');
-    play.classList.toggle('bi-pause');
+    play.classList.toggle('fa-play');
+    play.classList.toggle('fa-pause');
 })
 
 // *********************************************************
@@ -135,12 +136,13 @@ replay.addEventListener('click', ()=>{
 
 
 mute.addEventListener('click', ()=>{
-    mute.classList.toggle('bi-volume-mute-fill')
-    mute.classList.toggle('bi-volume-up-fill')
+    // <i class="fa-solid fa-volume-xmark"></i>
+    mute.classList.toggle('fa-volume-high');
+    mute.classList.toggle('fa-volume-xmark');
 
-    if(mute.classList.contains('bi-volume-mute-fill')){
+    if(mute.classList.contains('fa-volume-xmark')){
         audio.muted = true;
-    }else if(mute.classList.contains('bi-volume-up-fill')){
+    }else if(mute.classList.contains('fa-volume-high')){
         audio.muted = false;
     }
 })
@@ -214,18 +216,18 @@ setInterval(()=>{
 
     //sync with the paly music with palyBtn
     if(audio.paused){
-        play.classList.add('bi-play');
-        play.classList.remove('bi-pause');
+        play.classList.add('fa-play');
+        play.classList.remove('fa-pause');
     }else{
-        play.classList.remove('bi-play');
-        play.classList.add('bi-pause');
+        play.classList.remove('fa-play');
+        play.classList.add('fa-pause');
     }
 
 
     if(Math.floor(audio.currentTime) > Math.floor(audio.duration) - 2){
 
-        play.classList.remove('bi-pause');
-        play.classList.add('bi-play');
+        play.classList.remove('fa-pause');
+        play.classList.add('fa-play');
     }  
 
 

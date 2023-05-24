@@ -8,8 +8,10 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- icons links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -28,7 +30,7 @@
         <div class="upper">
             <p id="logo">Samiran Maity</p>
             <div class="list-btn">
-                <i class="bi bi-list" id="list"></i>
+                <i class="fa-solid fa-bars btn" id="list"></i>
             </div>
         </div>
         <div class="middle">
@@ -41,10 +43,10 @@
         <div class="bottom">
             <div class="control">
                 <div class="extra-feature">
-                    <i class="bi bi-volume-up-fill" id="mute"></i>
+                    <i class="fa-solid fa-volume-high" id="mute"></i>
                     <div class="palyorder">
-                        <i class="bi bi-shuffle" id="replay"></i>
-                        <i class="bi bi-repeat" id="loop"></i>
+                        <i class="fa-solid fa-shuffle" id="replay"></i>
+                        <i class="fa-solid fa-repeat" id="loop"></i>
                     </div>
                 </div>
                 <div class="progress-container">
@@ -56,20 +58,22 @@
                 </div>
             </div>
             <div class="play-pause-change">
-                <i class="bi bi-chevron-bar-left change-song" id="prev"></i>
-                <div class="btn-holder" id="play-btn">
-                    <i class="bi bi-play" id="play"></i>
+                <div class="btn-holder" id="prev">
+                    <i class="fa-solid fa-backward-step change-song btn"></i>
                 </div>
-                <i class="bi bi-chevron-bar-right change-song" id="next"></i>
+                <div class="btn-holder" id="play-btn">
+                    <i class="fa-solid fa-play btn" id="play"></i>
+                </div>
+                <div class="btn-holder" id="next">
+                    <i class="fa-solid fa-forward-step change-song btn"></i>
+                </div>
             </div>
         </div>
 
         <!-- for list of songs -->
         <div class="listWindow display--none">
-            <!-- <i class="bi bi-toggle-off"></i> -->
-            <!-- <i class="bi bi-toggle-on"></i> -->
             <div class="upper-list">
-                <i class="bi bi-x-lg" id="x"></i>
+                <i class="fa-solid fa-xmark" id="x"></i>
             </div>
             <div class="song-list">
                 <!-- <div class="song">

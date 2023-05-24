@@ -3,13 +3,13 @@ const musicData = [
         songTitle: 'Villain',
         songUrl: './music_libary/VILLAIN.mp3',
         songImageUrl: './Images/image1.png',
-        songAuthor: 'ft. Madison Beer'
+        songAuthor: 'Ft. Madison Beer'
     },
     {
         songTitle: 'Golden Hour',
         songUrl: './music_libary/Golden-Hour.mp3',
         songImageUrl: './Images/image2.png',
-        songAuthor: 'JVKE'
+        songAuthor: 'Jvke'
     },
     {
         songTitle: 'Inside',

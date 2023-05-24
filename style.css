@@ -1,28 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&family=Sacramento&display=swap');
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    user-select: none;
+    /* user-select: none; */
 }
 
 body {
     background-color: black;
     font-family: 'Kalam', cursive;
     color: rgb(255, 255, 255);
+
 }
 
 .container {
     width: 390px;
     aspect-ratio: 1/1.5;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    background: linear-gradient(45deg, rgb(88, 88, 88), rgb(171, 171, 171), rgb(88, 88, 88));
+    border-radius: 40px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    margin: 30px auto;
+    /* margin: 30px auto; */
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     overflow: hidden;
 }
@@ -35,15 +41,18 @@ body {
 }
 
 #logo {
-    font-size: 25px;
-    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    /* color: white; */
+    color: black;
+    font-family: 'Nova Slim', cursive;
 }
 
 #list {
     font-size: 20px;
     cursor: pointer;
     color: black;
-    margin: 4px 0 0 1px;
+    /* margin: 4px 0 0 1px; */
 }
 
 .list-btn {
@@ -54,7 +63,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+    box-shadow: 3px 3px 10px rgb(56, 56, 56);
+
 
 }
 
@@ -73,7 +84,7 @@ body {
     height: 220px;
     background-color: white;
     border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    box-shadow: 5px 5px 10px rgb(102, 102, 102);
     /* border: 1px solid tomato; */
 
     /* background-image: url(./Images/image1.jpg); */
@@ -88,13 +99,15 @@ body {
 }
 
 #songAuthor {
-    margin-top: 10px;
+    /* margin-top: 5px; */
     font-size: 18px;
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Sacramento', cursive;
+    color: black;
 }
 
 #song-title {
     font-size: 30px;
+    color: black;
 }
 
 .bottom {
@@ -123,17 +136,17 @@ body {
 }
 
 #mute {
-    font-size: 25px;
+    font-size: 17px;
     cursor: pointer;
 }
 
 #loop {
-    font-size: 25px;
+    font-size: 17px;
     cursor: pointer;
 }
 
 #replay {
-    font-size: 22px;
+    font-size: 18px;
     cursor: pointer;
     margin-right: 20px;
 }
@@ -151,8 +164,8 @@ body {
     -webkit-appearance: none;
     width: 100%;
     height: 6px;
-    background-color: rgb(201, 201, 201);
-    border-radius: 4px;
+    background-color: rgba(213, 213, 213, 0.906);
+    border-radius: 3px;
     cursor: pointer;
 
     overflow: hidden;
@@ -163,8 +176,8 @@ body {
     -webkit-appearance: none;
     width: 1px;
     height: 15px;
-    background-color: #90ee90;
-    box-shadow: -400px 0 0 400px #90ee90;
+    background-color: #6f6f6f;
+    box-shadow: -400px 0 0 400px #6f6f6f;
 }
 
 .time {
@@ -189,13 +202,23 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 0 50px;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     align-items: center ;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 #play {
-    font-size: 40px;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+    font-size: 25px;
+    color: black;
+}
+
+.change-song {
+    font-size: 25px;
     color: black;
 }
 
@@ -207,18 +230,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 7.5px 0px 0px 0.5px;
+    /* padding: 7.5px 0px 0px 0.5px; */
 
     position: relative;
 
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+    box-shadow: 3px 3px 10px rgb(102, 102, 102);
+    
+
 
 }
 
-.change-song {
-    font-size: 35px;
-    cursor: pointer;
+.btn {
+    background: -webkit-linear-gradient(65deg, rgb(88, 88, 88), rgb(162, 162, 162), rgb(88, 88, 88));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
 }
 
 
@@ -230,10 +258,12 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.755);
+    background-color: rgba(49, 49, 49, 0.755);
     backdrop-filter: blur(8px);
 
-    color: black;
+    padding-bottom: 10px;
+
+    color: white;
 
     display: flex;
     flex-direction: column;
@@ -245,20 +275,21 @@ body {
 }
 
 .upper-list {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(255, 211, 203);
     display: flex;
-    padding: 20px;
+    padding: 20px 30px;
     justify-content: flex-end;
 }
 
 #x {
     font-size: 25px;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
 .song {
-    border: 1px solid tomato;
+    border: 1px solid rgb(255, 211, 203);
+    border-radius: 35px;
     margin: 10px 5px 0 5px;
     padding: 10px;
     display: flex;
@@ -281,7 +312,7 @@ body {
 }
 
 .song p{
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Sacramento', cursive;
     font-size: 18px;
 }
 
@@ -316,7 +347,7 @@ body {
 
 /* ************************************ */
 /* mobile responsive */
-@media (max-width: 768px){
+/* @media (max-width: 768px){
     .container {
         padding: 0;
         margin: 0;
@@ -397,4 +428,4 @@ body {
     #song-title-list {
         font-size: 23px;
     }
-}
+} */
