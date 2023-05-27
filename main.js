@@ -52,17 +52,17 @@ const replayList = {
 }
 
 // function to handel replay
-function repalyHandel(){
-        songNo = 0;
-        selectSong(songNo);
-        audio.play();
+function repalyHandel() {
+    songNo = 0;
+    selectSong(songNo);
+    audio.play();
 }
 
 
 // *********************************************************
 // for selecting song from musicData
 
-function selectSong(i){
+function selectSong(i) {
     songTitle.innerText = musicData[i].songTitle;
     songAuthor.innerText = musicData[i].songAuthor;
     songImage.style.backgroundImage = `url(${musicData[i].songImageUrl})`;
@@ -72,28 +72,28 @@ function selectSong(i){
 //default songNo
 selectSong(songNo);
 
-next.addEventListener('click', ()=>{
-    if(songNo >= musicData.length - 1) return;
+next.addEventListener('click', () => {
+    if (songNo >= musicData.length - 1) return;
 
-    songNo ++;
+    songNo++;
     selectSong(songNo);
     audio.play();
 
-    if(play.classList.contains('fa-pause')){
+    if (play.classList.contains('fa-pause')) {
         play.classList.add('fa-play');
         // play.classList.remove('bi-pause');
         play.classList.remove('fa-pause');
     }
 })
 
-prev.addEventListener('click', ()=>{
-    if(songNo <= 0) return;
+prev.addEventListener('click', () => {
+    if (songNo <= 0) return;
 
-    songNo --;
+    songNo--;
     selectSong(songNo);
     audio.play();
 
-    if(play.classList.contains('fa-pause')){
+    if (play.classList.contains('fa-pause')) {
         play.classList.add('fa-play');
         play.classList.remove('fa-pause');
     }
@@ -102,10 +102,10 @@ prev.addEventListener('click', ()=>{
 
 // *********************************************************
 // for adding play and pause function
-playPauseBtn.addEventListener('click', ()=>{
-    if(play.classList.contains('fa-play')){
+playPauseBtn.addEventListener('click', () => {
+    if (play.classList.contains('fa-play')) {
         audio.play();
-    }else if(play.classList.contains('fa-pause')){
+    } else if (play.classList.contains('fa-pause')) {
         audio.pause();
     }
 
@@ -116,33 +116,33 @@ playPauseBtn.addEventListener('click', ()=>{
 // *********************************************************
 //extra features --------------------
 // for add loop a single music
-loop.addEventListener('click', ()=>{
+loop.addEventListener('click', () => {
     loop.classList.toggle('green--color');
-    if(loop.classList.contains('green--color')){
+    if (loop.classList.contains('green--color')) {
         audio.loop = true;
-    }else{
+    } else {
         audio.loop = false;
     }
 })
 
-replay.addEventListener('click', ()=>{
+replay.addEventListener('click', () => {
     replay.classList.toggle('green--color');
-    if(replay.classList.contains('green--color')){
+    if (replay.classList.contains('green--color')) {
         replayList.status = true;
-    }else{
+    } else {
         replayList.status = false;
     }
 })
 
 
-mute.addEventListener('click', ()=>{
+mute.addEventListener('click', () => {
     // <i class="fa-solid fa-volume-xmark"></i>
     mute.classList.toggle('fa-volume-high');
     mute.classList.toggle('fa-volume-xmark');
 
-    if(mute.classList.contains('fa-volume-xmark')){
+    if (mute.classList.contains('fa-volume-xmark')) {
         audio.muted = true;
-    }else if(mute.classList.contains('fa-volume-high')){
+    } else if (mute.classList.contains('fa-volume-high')) {
         audio.muted = false;
     }
 })
@@ -151,90 +151,84 @@ mute.addEventListener('click', ()=>{
 // traking time and progress bar
 let songDuration, fraction;
 
-function findingDuration(){
+function findingDuration() {
     songDuration = audio.duration;
     fraction = songDuration / 100;
     // console.log(songDuration)
 }
 
- function timeConvert(totalSec){
+function timeConvert(totalSec) {
     const min = Math.floor(totalSec / 60);
     const sec = Math.floor(totalSec % 60);
     let stringSec = '' + sec;
     let stringMin = '' + min;
 
-    if(min < 10){
+    if (min < 10) {
         stringMin = `0${min}`;
     }
 
-    if(sec < 10){
+    if (sec < 10) {
         stringSec = `0${sec}`;
     }
 
     // *********** for hendaling NaN in time ***********
-    if(!min){
+    if (!min) {
         stringMin = '00'
     }
-    if(!sec){
+    if (!sec) {
         stringSec = '00'
     }
 
     return `${stringMin}:${stringSec}`;
- }
+}
 
 
-setInterval(()=>{
+setInterval(() => {
 
     findingDuration();
     totalTime.innerText = timeConvert(songDuration);
-    progress.value = audio.currentTime/fraction;
+    progress.value = audio.currentTime / fraction;
     current.innerText = timeConvert(audio.currentTime);
 
-    
+
 
     //for adding loop function with multiple music
-    if(!audio.loop){
-        if(progress.value == 100){
+    if (!audio.loop) {
+        if (progress.value == 100) {
             //for handeling replay
-            if(songNo == musicData.length - 1){
-                if(replayList.status){
+            if (songNo == musicData.length - 1) {
+                if (replayList.status) {
                     repalyHandel();
                     return;
+                } else {
+                    play.classList.remove('fa-pause');
+                    play.classList.add('fa-play');
                 }
             }
 
             //for handeling next song
-            if(songNo >= musicData.length - 1) return;
-            songNo ++;
+            if (songNo >= musicData.length - 1) return;
+            songNo++;
             selectSong(songNo);
             audio.play();
         }
-
     }
-    
+
 
 
     //sync with the paly music with palyBtn
-    if(audio.paused){
+    if (audio.paused) { //for replay hendal
         play.classList.add('fa-play');
         play.classList.remove('fa-pause');
-    }else{
+    } else { //for end paused heldal
         play.classList.remove('fa-play');
         play.classList.add('fa-pause');
     }
 
-
-    if(Math.floor(audio.currentTime) > Math.floor(audio.duration) - 2){
-
-        play.classList.remove('fa-pause');
-        play.classList.add('fa-play');
-    }  
-
-
 }, 1000)
 
 
-progress.addEventListener('change',()=>{
+progress.addEventListener('change', () => {
     audio.currentTime = progress.value * fraction;
 })
 
@@ -242,15 +236,15 @@ progress.addEventListener('change',()=>{
 // *********************************************************
 
 // for window of list of songs
-listBtn.addEventListener('click', ()=>{
+listBtn.addEventListener('click', () => {
     listWindow.classList.remove('display--none');
 })
 
-listBtnClose.addEventListener('click', ()=>{
+listBtnClose.addEventListener('click', () => {
     listWindow.classList.add('display--none');
 })
 
-function playTheSong(ele){
+function playTheSong(ele) {
     songNo = + ele.currentTarget.dataset.no
 
     selectSong(songNo);
@@ -259,7 +253,7 @@ function playTheSong(ele){
 }
 
 // songListHolder
-musicData.forEach((ele, index)=>{
+musicData.forEach((ele, index) => {
     const songDiv = document.createElement('div'); //creating element for songdata to hold
     songDiv.classList.add('song');
 
